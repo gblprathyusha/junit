@@ -64,7 +64,7 @@ function getDatafromAPI(city, callback) {
         else {
             try {
                 client.set(city, JSON.stringify({ "temp": response.body.main.temp }));
-                callback(null, { "temp": response.body.main.temp });
+                //callback(null, { "temp": response.body.main.temp });
             }
             catch (err) { 
                 callback(null,{ message: "invalid city name" }) }
@@ -78,4 +78,3 @@ function getnum() {
 }
 
 module.exports = { getdatafromRedis, getDatafromAPI }
-

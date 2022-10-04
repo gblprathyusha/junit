@@ -43,10 +43,10 @@ app.listen(3000, async () => {
 });
 
 async function getdatafromRedis(city) {
-    console.log("I m in redis function");
-    const result = await client.get(city);
+    //console.log("I m in redis function");
+    const result = await client.get(city); //stub client.get,deep equals to check result
     if (result != null) {
-        console.log("result from getdatafromredis", result)
+       // console.log("result from getdatafromredis", result)
         return JSON.parse(result);
 
     } else {
@@ -73,8 +73,8 @@ function getDatafromAPI(city, callback) {
 }
 
 
-function getnum() {
+/*function getnum() {
     return "hi";
-}
+}*/
 
 module.exports = { getdatafromRedis, getDatafromAPI }
